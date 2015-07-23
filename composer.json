@@ -1,0 +1,20 @@
+{
+    "name": "smithfoto/hello-world",
+    "description": "My first Composer project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "smithfoto",
+            "email": "taingsunnguon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "HelloWorld": "src/"
+        }
+    }
+}
