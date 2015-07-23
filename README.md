@@ -54,7 +54,7 @@ Would you like to define your dev dependencies (require-dev) interactively [yes]
 
 Now you have "composer.json" file saved in your root dir. It's almost ready but we must do some changes: 
 
-``` ruby
+```ruby
 {
     "name": "<your-vendor>/hello-world",
     "description": "My first Composer project",
@@ -78,5 +78,22 @@ Now you have "composer.json" file saved in your root dir. It's almost ready but 
 Testing Package
 --------------
 Shure we want to do a simple test to verify if our class is working well. You can create a new project and "paste" your classes inside it or test inside your own project, wich is better and easier. We're creating a Composer project so we must have Composer files installed inside our projects. So, install it running "composer install" inside your root dir:
-`composer install`
 
+```$ composer install```
+
+create a directory `tests` inside your root dir. Create the `test.php` file inside it with the follow content:
+
+```ruby
+<?php 
+
+require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
+
+use HelloWorld\SayHello;
+
+echo SayHello::world();
+```
+Go to the terminal and type: 
+
+```$ php tests/test.php```
+
+You'll get "Hello World, Composer!". It's working now.
